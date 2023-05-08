@@ -1,0 +1,19 @@
+.cmpDetailParent {
+    margin: 35px;
+    .cmpTitle {
+        font-weight: bold;
+    }
+    div>span {
+        font-weight: bold;
+    }
+    label+div {
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    a {
+        color: blue;
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

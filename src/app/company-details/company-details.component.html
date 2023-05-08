@@ -1,0 +1,22 @@
+
+
+<div class="cmpDetailParent" *ngIf="companyDetail">
+    <div class="cmpTitle">
+        {{companyDetail?.title}}
+    </div>
+    <div>company number <span>{{companyDetail?.company_number}}</span> </div>
+    <br>
+    <label>Registered office address</label>
+    <div>{{companyDetail?.address_snippet}}</div>
+
+    <label>Company Status</label>
+    <div>{{companyDetail?.company_status}}</div>
+
+    <label>Company type</label>
+    <div>{{companyDetail?.company_type}}</div>
+
+    <label>Incorporated on</label>
+    <div>{{companyDetail?.date_of_creation}}</div>
+
+    <a (click)="officersList(companyDetail?.title, companyDetail?.company_number)">List Officers</a>
+</div>

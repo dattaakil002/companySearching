@@ -1,0 +1,28 @@
+
+<div class="searchParent">
+    <input class="searchItem" type="text" name="search" [(ngModel)]="searchInput" placeholder="Company Name or Number">
+</div>
+<div class="buttonParent">
+    <button class="buttonItem" (click)="searchResult()">
+        Search
+    </button>
+</div>
+
+<hr>
+
+<div *ngIf="this.companies?.length > 0">
+    <h1>SEARCH RESULTS</h1>
+
+    <div class="searchRes" *ngFor="let company of companies | paginate: { itemsPerPage: 10, currentPage: p}">
+        <a (click)="goToLink('http://localhost:4200/company/'+searchInput+ '/' +company?.company_number)">{{company?.title}}</a>
+        <div>
+            <span>{{company?.company_number}}</span> - Incorporated on {{company?.date_of_creation}}
+        </div>
+        <div>
+            {{company?.address_snippet}}
+        </div>
+    </div>
+
+    <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls>
+</div>
+

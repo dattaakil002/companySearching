@@ -1,0 +1,15 @@
+
+
+<div class="officerParent">
+    <span class="cmpname">{{cmpName}}</span> - Officers
+    <div>
+        Company number <span class="cmpId">{{id}}</span>
+    </div>
+
+    <div *ngFor="let officer of officersList">
+        <br>
+        <div class="officerName">{{officer?.name}}</div>
+        <div>{{officer?.officer_role}}</div>
+        
+    </div>
+</div>
